@@ -1,28 +1,58 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SideLeft 
+      :favs="likes"
+    />
+    <search 
+      @select="handleSelected" 
+      @like="handleLike"
+    />
+    <SideRight 
+      :selected="selected"
+    />
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Search from "./components/Search.vue"
+import SideRight from "./components/SideRight.vue"
+import SideLeft from "./components/SideLeft.vue"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+
+  components: { 
+    Search, 
+    SideRight,
+    SideLeft 
+  },
+
+  data() {
+    return {
+      selected: null,
+      likes: []
+    }
+  },
+
+  methods: {
+    handleSelected(item) {
+      this.selected = item
+    },
+    
+    handleLike(item) {
+      this.likes.push(item)
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
 }
 </style>
