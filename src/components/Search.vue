@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900">
+  <div class="bg-gray-800">
     <input type="text" v-model="query" @keypress.enter="getResult" />
     <button @click="getResult">Search</button>
     <item 
