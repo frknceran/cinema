@@ -1,5 +1,5 @@
 <template>
-    <div id="item">
+    <div id="p-24 bg-black-800">
         <div class="view" @click="handleClick">
             <img :src="'http://image.tmdb.org/t/p/w500/' + item.poster_path" width="100px">
             <div class="text">

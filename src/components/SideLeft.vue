@@ -4,7 +4,7 @@
         <div class="list">    
             <h4>Favoriler</h4>
             <ul v-for="fav in favs" :key="fav.id">
-                <li>{{ fav.title }}</li>
+            <li>{{ fav.title }}</li>
             </ul>
         </div>
     </div>
